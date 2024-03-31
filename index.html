@@ -43,10 +43,10 @@
 		    padding-bottom: 52%;
 		    padding-top: 30px; 
 		    height: 0; 
-                    width:70%;
-                    float:left;
+        width:70%;
+        float:left;
 		    overflow-y: auto;
-		}
+    }
 		 
 		.vid-container iframe,
 		.vid-container object,
@@ -129,7 +129,8 @@
 
   		    <!-- THE YOUTUBE PLAYER -->
       <div class="vid-container">
-         <iframe id="vid_frame" allowfullscreen="" frameborder="0"  src="//popcdn.day/play.php?stream=RTP1" frameborder="0" width="560" height="440"></iframe>
+  
+        <iframe id="vid_frame" width="560" height="440" src="//popcdn.day/play.php?stream=RTP1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <!-- THE PLAYLIST -->
@@ -250,12 +251,17 @@
   <script>
   /*JS FOR SCROLLING THE ROW OF THUMBNAILS*/
 $(document).ready(function () {
-  $('.vid-item').each(function (index) {
-    $(this).on('click', function () {
-      var current_index = index + 1;
-      $('.vid-item .thumb').removeClass('active');
-      $('.vid-item:nth-child(' + current_index + ') .thumb').addClass('active');
+  $('.vid-item').each(function(index){
+    $(this).on('click', function(){
+      var current_index = index+1;
+      $('.vid-list li').removeClass('active');
+      $('.vid-list li:nth-child('+current_index+') .thumb').addClass('active');
     });
+  });
+  var $list = $('#vid-list li');
+  $list.click(function(){
+    $list.removeClass('selected');
+    $(this).addClass('selected'); 
   });
 });
 </script> 
