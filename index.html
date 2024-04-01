@@ -122,10 +122,19 @@
 			}
 
 		}
-</style>
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+height:100%;
+width: 100%;
+}
+  </style>
   </head>
 <body>
-  <div class="vid-main-wrapper clearfix">
+  <div class="container">
+	<div class="vid-main-wrapper clearfix">
 
   		    <!-- THE YOUTUBE PLAYER -->
       <div class="vid-container">
@@ -248,6 +257,7 @@
               </ul>
        </div>
 </div>
+  </div>  
   <script>
   /*JS FOR SCROLLING THE ROW OF THUMBNAILS*/
 $(document).ready(function () {
